@@ -1,0 +1,357 @@
+/* 
+=========================================================
+   MAINCRAFTS TECHNOLOGY LANDING PAGE CSS
+   Clean, essential, and beginner-friendly styles.
+=========================================================
+*/
+
+/* 1. CSS VARIABLES & RESET */
+:root {
+    --color-slate-900: #0F172A; /* Deep slate - background and text */
+    --color-slate-800: #1E293B; /* Card or submenu backgrounds */
+    --color-sky-400:   #38BDF8; /* Sky blue highlight color */
+    --color-slate-50:  #F8FAFC; /* Light gray body background */
+    --text-dark:       #0F172A;
+    --text-muted:      #475569;
+    --text-light:      #F8FAFC;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--color-slate-50);
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    color: var(--color-slate-900);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s ease;
+}
+
+ul {
+    list-style: none;
+}
+
+/* 2. STICKY HEADER & NAVBAR */
+.navbar {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background-color: var(--color-slate-900);
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.nav-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 1.2rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--text-light);
+}
+
+.logo-accent {
+    color: var(--color-sky-400);
+}
+
+.nav-list {
+    display: flex;
+    align-items: center;
+    gap: 1.8rem;
+}
+
+.nav-links a {
+    color: var(--text-light);
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+.nav-links a:hover {
+    color: var(--color-sky-400);
+}
+
+/* Dropdown Menu (Desktop Hover) */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-toggle i {
+    font-size: 0.75rem;
+    margin-left: 0.2rem;
+    transition: transform 0.2s ease;
+}
+
+.dropdown:hover .dropdown-toggle i {
+    transform: rotate(180deg);
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: var(--color-slate-800);
+    min-width: 170px;
+    border-radius: 6px;
+    padding: 0.5rem 0;
+    margin-top: 0.6rem;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.dropdown-menu li a {
+    display: block;
+    padding: 0.5rem 1.2rem;
+    color: var(--text-light);
+    font-size: 0.9rem;
+}
+
+.dropdown-menu li a:hover {
+    background-color: var(--color-slate-900);
+    color: var(--color-sky-400);
+}
+
+/* Displays dropdown menu on hover */
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+/* Mobile Burger Menu Button */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--text-light);
+    font-size: 1.4rem;
+    cursor: pointer;
+}
+
+/* 3. HERO SECTION */
+.hero {
+    min-height: 80vh;
+    background: linear-gradient(135deg, #0F172A 0%, #1E293B 60%, #0284c7 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 3rem 2rem;
+    color: var(--text-light);
+}
+
+.hero-container {
+    max-width: 700px;
+}
+
+.hero-title {
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    color: var(--text-light);
+    line-height: 1.2;
+    margin-bottom: 1.2rem;
+}
+
+.hero-subtitle {
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    opacity: 0.85;
+    margin-bottom: 2rem;
+    font-weight: 300;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 0.75rem 2rem;
+    background-color: var(--color-sky-400);
+    color: var(--color-slate-900);
+    font-weight: 600;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #ffffff;
+    color: var(--color-slate-900);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(56, 189, 248, 0.3);
+}
+
+/* 4. FEATURES SECTION */
+.features {
+    padding: 6rem 2rem;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.section-subtitle {
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 1rem;
+    margin-bottom: 4rem;
+}
+
+.features-grid {
+    display: grid;
+    /* responsive grid reflow without media query rules */
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 2rem;
+}
+
+.card {
+    background-color: #ffffff;
+    padding: 2.2rem 1.8rem;
+    border-radius: 8px;
+    border: 1px solid rgba(15, 23, 42, 0.04);
+    box-shadow: 0 4px 10px rgba(15, 23, 42, 0.03);
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(15, 23, 42, 0.08);
+}
+
+.card-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    background-color: rgba(56, 189, 248, 0.1);
+    color: var(--color-sky-400);
+    border-radius: 6px;
+    font-size: 1.5rem;
+    margin-bottom: 1.2rem;
+    transition: all 0.3s ease;
+}
+
+.card:hover .card-icon {
+    background-color: var(--color-sky-400);
+    color: var(--color-slate-900);
+}
+
+.card h3 {
+    font-size: 1.15rem;
+    margin-bottom: 0.8rem;
+}
+
+.card p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+/* 5. FOOTER */
+.footer {
+    background-color: var(--color-slate-900);
+    color: var(--text-light);
+    padding: 2.5rem 2rem;
+}
+
+.footer-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.2rem;
+}
+
+.copyright {
+    font-size: 0.85rem;
+    opacity: 0.7;
+}
+
+.footer-links {
+    display: flex;
+    gap: 1.5rem;
+    font-size: 0.85rem;
+}
+
+.footer-links a {
+    opacity: 0.7;
+}
+
+.footer-links a:hover {
+    color: var(--color-sky-400);
+    opacity: 1;
+}
+
+/* 6. RESPONSIVE MEDIA QUERIES */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block; /* Shows mobile menu button */
+    }
+
+    .nav-links {
+        display: none; /* Hidden on mobile by default */
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--color-slate-900);
+        padding: 1.5rem 2rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    /* JavaScript toggles this class to open the menu drawer */
+    .nav-links.active {
+        display: block;
+    }
+
+    .nav-list {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.2rem;
+    }
+
+    /* Submenu dropdown behavior adjustments for mobile */
+    .dropdown {
+        width: 100%;
+    }
+
+    .dropdown-menu {
+        position: static;
+        display: block;
+        box-shadow: none;
+        background-color: rgba(255, 255, 255, 0.03);
+        margin-top: 0.5rem;
+        padding: 0.5rem 1rem;
+        border-left: 2px solid var(--color-sky-400);
+        border-radius: 0;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+}
